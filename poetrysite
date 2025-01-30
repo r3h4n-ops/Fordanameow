@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Poetry for Dana</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>من أجل حُب حياتي، دانه</h1>
+        <div id="poetry">
+            <p>أدخل هنا نص الشعر السعودي التقليدي...</p>
+        </div>
+        <button id="generate-poem">دانه</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: url('old-paper.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #3b2a20;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    font-family: 'Amiri', serif;
+    color: #6a4e3b;
+}
+
+button {
+    background-color: #d7a46f;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-family: 'Amiri', serif;
+}
+
+button:hover {
+    background-color: #c4925a;
+}
+
+const poems = [
+    "شعر عن الحب السعودي التقليدي...",
+    "شعر آخر...",
+    // Add more poems here
+];
+
+document.getElementById("generate-poem").addEventListener("click", function() {
+    const randomPoem = poems[Math.floor(Math.random() * poems.length)];
+    document.getElementById("poetry").innerHTML = `<p>${randomPoem}</p>`;
+});
